@@ -9,7 +9,7 @@ pipeline {
 		stage('Clone Repository'){
 			steps{
 				git branch: 'main',
-				url: ''
+				url: 'https://github.com/Aakash0706/exam-program1.git'
 			}
 		}
 
