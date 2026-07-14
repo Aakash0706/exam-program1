@@ -47,17 +47,6 @@ pipeline {
 				sh 'docker push $IMAGE_NAME:$IMAGE_TAG'
 			}
 		}
-		
-		stage('Deploy Kubernetes') {
-			steps{
-				sh '''
-				kubectl set image deployment/simple-program1 \
-				simple-program1=$IMAGE_NAME:$IMAGE_TAG
-	
-				kubectl rollout status deployment/simple-program1
-				'''
-			}
-		}
 
 	}
 }
